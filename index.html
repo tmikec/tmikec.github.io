@@ -1,29 +1,3 @@
-<?php
-    $message_sent = false;
-    if(isset($_POST['email']) && $_POST['email'] != ''){
-
-    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) )
-    {
-
-    //submit form
-
-    $userName=$_POST['name'];
-    $userEmail=$_POST['email'];
-    $userText=$_POST['text'];
-
-    $to= "tomislav.mikec00@gmail.com";
-
-    $body ="";
-    $body.="From: ".$userName. "\r\n";
-    $body.="From: ".$userEmail. "\r\n";
-    $body.="From: ".$userText. "\r\n";
-
-    mail($to, $body);
-    $message_sent = true;
-}        
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -198,14 +172,6 @@
                         <textarea name="text" id="" cols="0" rows="10" placeholder="Type your message here!" class="contact__input"></textarea>
                         <input type="submit" value="Send" class="contact__button button">
                     </form>
-            <?php
-                if($message_sent):
-            ?>
-                <h3> Your message has been sent!</h3>
-
-        <?php
-        else:
-        ?>
                 </div>
             </section>
         </main>
@@ -227,8 +193,5 @@
 
         <!--===== MAIN JS =====-->
         <script src="includes/js/main.js"></script>
-        <?php
-        endif;
-        ?>
     </body>
 </html>
